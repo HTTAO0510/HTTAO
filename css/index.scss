@@ -1,0 +1,103 @@
+$block-color1: gray; 
+
+@mixin block-quote{
+    color: $block-color1;
+    font-style: italic;
+    font-size: 0.13rem;
+    margin: 20px 0 20px;
+    padding: 10px 20px;
+    border-left: 5px solid $link-color3;
+}
+@mixin block-h1{
+    h1{
+        font-size: 0.3rem;
+        font-weight:700;
+        a{
+            opacity: 1;
+            margin-left: -0.775em;
+            color: $link-color4;
+            position: absolute;
+            padding-top: 1px;
+            cursor: pointer;
+            &:after{
+                content: attr(data-anchorjs-icon);
+                -webkit-box-sizing: border-box;
+                -moz-box-sizing: border-box;
+                box-sizing: border-box;
+            }
+        }
+        
+    }
+    span{
+        p{
+            margin: 30px 0;
+        }
+    }
+}
+@mixin table-td{
+    padding: 8px;
+    line-height: 1.42857143;
+    vertical-align: top;
+    border: 1px solid #eee;
+}
+#contents{
+    .post-block{
+        blockquote{
+            @include block-quote;
+        }
+        @include block-h1;
+        .table-responsives{
+            overflow-x: auto;
+            table{
+                @include width-m;
+                margin-bottom: 20px;
+                & > thead {
+                    & > tr {
+                      & > th {
+                            @include table-td;
+                            border-top: 0;
+                    }
+                }
+              }
+                & > tbody {
+                    & > tr {
+                      & > td {
+                            @include table-td;
+                    }
+                }
+              }
+            }
+        }
+        hr{
+           @include hr-border; 
+        }
+    }
+    .wid-div{
+        img{
+            width: 10%;
+            height: 2%;
+            text-align: center;
+        }
+        span{
+            padding-top: 40px;
+        }
+    }
+    .pagers{
+        a{
+            width: 3rem;
+            display: block;
+            &:hover{
+                transition: 0.4s all ease;
+                span{
+                    color: $link-color6;
+                }
+            }
+            span{
+                font-weight: 400;
+                color: $link-color3;
+                display: block;
+            }
+        }
+        
+    }
+}

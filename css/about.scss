@@ -1,0 +1,37 @@
+.post-container{
+    blockquote{
+        @include block-quote;
+    }
+    @include block-h1;
+    .tags{
+        @include width-m;
+        a{
+            display: inline-block;
+            border: 1px solid $link-color5;
+            border-radius: 0em;
+            line-height: 24px;
+            font-size: 0.11rem;
+            padding: 0 10px;
+            margin:15px 5px 0;
+            &:hover{
+                @include li-a-text;
+                border: 1px solid $link-color4;
+            }
+        }
+    }
+}
+#contents{
+    .pa-h5{
+        .tags{
+            img{
+              &.imges1{
+                  width: 40%;
+                  height: 40%;
+                  @media (max-width: 992px){
+                    width: 20%;
+                  }
+              }  
+            }
+        }
+    }
+}
